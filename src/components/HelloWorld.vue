@@ -33,8 +33,17 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  // props: {
+  //   msg: String
+  // }
+  data() {
+    return {
+      msg: 'null'
+    }
+  },
+  created() {
+    let msg = this.$route.query.msg
+    this.msg = msg
   }
 }
 </script>
