@@ -27,23 +27,22 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <h3><router-link :to="{ name:'ChildRoute', params: {childRoute: 123} }">go to child vue</router-link></h3>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import router from '../router/index.js'
+
 export default {
   name: 'HelloWorld',
-  // props: {
-  //   msg: String
-  // }
+  props:['msg'],
+  router,
   data() {
     return {
-      msg: 'null'
+
     }
-  },
-  created() {
-    let msg = this.$route.query.msg
-    this.msg = msg
   }
 }
 </script>

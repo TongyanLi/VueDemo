@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h3><router-link :to="{ name:'HelloWorld', query: {msg: 'welcome to lty dome'} }">Go to HelloWorld</router-link></h3>
+    <h3><router-link :to="{ name:'HelloWorld', params: {msg: 'hello msg'} }">Go to HelloWorld</router-link></h3>
     <h3><router-link to="/vuexTest">Go to VuexTest</router-link></h3>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,5 +26,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
 }
 </style>
